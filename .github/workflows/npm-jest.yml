@@ -22,7 +22,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: disable
+        run: |
+          npx next telemetry status
+          npx next telemetry disable
+
     - name: Build
       run: |
+        npx next telemetry status
+        npx next telemetry disable
         npm install
+        npx next telemetry status
+        npx next telemetry disable
         npm run build
+        npx next telemetry status
+        npx next telemetry disable
