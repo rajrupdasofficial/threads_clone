@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: disable
-        run: |
+      run: |
           npx next telemetry status
           npx next telemetry disable
 
