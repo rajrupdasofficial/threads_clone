@@ -10,23 +10,29 @@ install node:
         - npm ci
         - npm install
 
-gulp test:
+.jest test:
     image: node:18.17.1
     stage: test
     script:
         - npm ci
         - npm install
-        - npm install gulp
-        - gulp
+        - npm install jest
+        - npx jest
 
 
 build the application:
     image: node:18:17.1
     stage: build
     script:
+        - npx next telemetry status
+        - npx next telemetry disable
         - npm ci
         - npm install
+        - npx next telemetry status
+        - npx next telemetry disable
         - npm run build
+        - npx next telemetry status
+        - npx next telemetry disable
     artifacts:
         paths:
             - build
