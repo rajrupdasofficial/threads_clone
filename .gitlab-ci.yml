@@ -25,4 +25,4 @@ build the application:
     - npx next telemetry disable
   artifacts:
     paths:
-      - build
+      - .next
