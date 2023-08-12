@@ -3,14 +3,14 @@ stages:
   - test
   - build
 
-install node:
+install_node:
   image: node:18.17.1
   stage: development
   script:
     - npm ci
     - npm install
 
-build the application:
+build_application:
   image: node:18.17.1
   stage: build
   script:
