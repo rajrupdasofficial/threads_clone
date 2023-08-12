@@ -16,8 +16,8 @@ gulp test:
     script:
         - npm ci
         - npm install
-        - npm install gulp
-        - gulp
+        - npm install jest
+        - npx jest
 
 
 build the application:
