@@ -1,16 +1,31 @@
 stages:
   - development
+  - test
   - build
+
 install node:
     image: node:18.17.1
     stage: development
     script:
         - npm ci
+        - npm install
+
+gulp test:
+    image: node:18.17.1
+    stage: test
+    script:
+        - npm ci
+        - npm install
+        - npm install gulp
+        - gulp
+
+
 build the application:
     image: node:18:17.1
     stage: build
     script:
         - npm ci
+        - npm install
         - npm run build
     artifacts:
         paths:
