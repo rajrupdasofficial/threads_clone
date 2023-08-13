@@ -2,9 +2,9 @@ name: Testing with jest
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "hotfix" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "hotfix" ]
 
 jobs:
   build:
@@ -37,5 +37,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: build-output
-        path: build
+        path: .next
         
