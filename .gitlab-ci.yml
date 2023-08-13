@@ -2,14 +2,13 @@ stages:
   - development
   - test
   - build
-
+  
 install node:
   image: node:18.17.1
   stage: development
   script:
     - npm ci
     - npm install
-
 build the application:
   image: node:18.17.1
   stage: build
@@ -26,3 +25,4 @@ build the application:
   artifacts:
     paths:
       - .next
+      
